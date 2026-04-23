@@ -20,7 +20,7 @@ def selection_sort(numbers):
 
 
 
-cisla = [42, 7, 91, 15, 63, 8, 57, 73, 2, 100]
+
 def bubble_sort(numbers):
     numbers = numbers.copy()
     n = len(numbers)
@@ -44,7 +44,6 @@ def bubble_sort(numbers):
     return numbers
 
 
-print(bubble_sort(cisla))
 
 if __name__ == "__main__":
     values = random_numbers(10)  # 10 čísel v rozsahu 0–100
