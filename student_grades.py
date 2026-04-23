@@ -40,13 +40,23 @@ class StudentsGrades:
                     scores[j], scores[j + 1] = scores[j + 1], scores[j]
         return scores
 
+def main():
+    results = StudentsGrades([85, 42, 91, 67, 50, 73, 100, 38, 58])
+    print(results.count())
+    for i in range(results.count()):
+        points = results.get_by_index(i)
+        grade = results.get_grade(i)
+        print(f"Student {i}: {points} points – {grade}")
+    print(results.find(100))
+    print(results.get_sorted())
+    from sorting import random_numbers
+
+    random_results = StudentsGrades(random_numbers(30, 0, 100))
+    print(random_results.count())
+    print(random_results.get_sorted())
+
+
 
 
 if __name__ == "__main__":
-    results = StudentsGrades([85, 42, 91, 67, 50, 73, 100, 38, 58])
-
-    print(results.count())
-    print(results.get_by_index(2))
-    print(results.scores)
-    print(results.get_grade(3))
-    print(results.find(73))
+    main()
