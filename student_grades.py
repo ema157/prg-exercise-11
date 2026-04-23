@@ -23,13 +23,30 @@ class StudentsGrades:
         else:
             return "F"
 
+    def find(self, value):
+        result =[]
+        n = len(self.scores)
+        for i in range(n):
+            if self.scores[i] == value:
+                result.append(i)
+        return result
 
+    def get_sorted(self):
+        scores = self.scores.copy()
+        n = len(scores)
+        for i in range(n):
+            for j in range(0, n - i - 1):
+                if scores[j] > scores[j + 1]:
+                    scores[j], scores[j + 1] = scores[j + 1], scores[j]
+        return scores
 
 
 
 if __name__ == "__main__":
     results = StudentsGrades([85, 42, 91, 67, 50, 73, 100, 38, 58])
 
-    print(results.count())  # 9
-    print(results.get_by_index(2))  # 91
-    print(results.scores)  # [85, 42, 91, 67, 50, 73, 100, 38, 58]
+    print(results.count())
+    print(results.get_by_index(2))
+    print(results.scores)
+    print(results.get_grade(3))
+    print(results.find(73))
